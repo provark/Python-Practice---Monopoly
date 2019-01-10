@@ -22,7 +22,7 @@ def wrap_cash(word):
     print("--" + ('-' * len(word)) + '----\n')
     
 # COLORS
-cpurple = '\033[35m'
+cpurple = '\033[95m'
 cblue = '\033[34m'
 cpink = '\33[35m'
 corange = '\033[93m'
@@ -33,14 +33,14 @@ cindigo = '\33[94m'
 cend = '\33[0m'
 
 
-purple = (cviolet2 + "purple" + cend)
+purple = (cpurple + "purple" + cend)
 blue = (cblue + "blue" + cend)
-pink = (cviolet + "pink" + cend)
+pink = (cpink + "pink" + cend)
 orange = (corange + "orange" + cend)
-red = (cred2 + "red" + cend)
+red = (cred + "red" + cend)
 yellow = (cyellow + "yellow" + cend)
 green = (cgreen + "green" + cend)
-indigo = (cblue2 + "indigo" + cend)  
+indigo = (cindigo + "indigo" + cend)  
 
 #********************************#
 ### CHAPTER 1: Property class ###
@@ -682,7 +682,7 @@ class Player:
                             continue             
                         else:
                             m_answer = int(m_answer)
-                            build_prop = self.prop_object[m_answer - 1]
+                            build_prop = m_list[m_answer - 1]
                             print("\nOkay. You will build one house or hotel on " + build_prop.name + "\n") 
                             #print("build_prop: ", build_prop)
                             #print("board[1] and board[3]: ", board[1], board[3]) #confirmed build_prop == board[]
