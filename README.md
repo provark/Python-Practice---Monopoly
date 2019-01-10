@@ -1,5 +1,5 @@
 # Python Practice
-Practice Project
+Practice Project.
 This is a text-based version of the classic Monopoly game.
 The game incorporates all the major features of Monopoly, with a few caveats:
 - The game is limited to a maximum of 4 players.
