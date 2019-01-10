@@ -1,6 +1,6 @@
 # Python Practice
+Practice Project
 This is a text-based version of the classic Monopoly game.
-I have recently started to learn Python, and this is my first major practice project.
 The game incorporates all the major features of Monopoly, with a few caveats:
 - The game is limited to a maximum of 4 players.
 - There is a jackpot of $1000 (on Free Parking), with taxes and get-out-of-jail payments added to the jackpot.
