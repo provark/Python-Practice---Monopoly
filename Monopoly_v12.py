@@ -299,7 +299,7 @@ class Player:
     # Note, Utility pay rent action is coded in the player.move method
     def pay_rent(self, player, p_position):
         if not "Railroad" in p_position[0] and not "Utility" in p_position[0]:
-            print("\n" + p_position[0][8:] + " is owned by " + player.name)
+            print("\n" + p_position[0] + " is owned by " + player.name)
             if p_position[2].houses == 0: 
                 print("\n\t$$$  Pay rent to player in the amount of $" + str(p_position[2].rent))
                 player.cash += p_position[2].rent
@@ -501,7 +501,7 @@ class Player:
             if "Railroad" in player_position[0] or "Utility" in player_position[0]:
                 prop_name = player_position[0]
             else:
-                prop_name = player_position[0][8:]
+                prop_name = player_position[0]
             print("\n" + prop_name + " is unowned, so you may buy it from the bank. \n")
             print("\tYour cash balance is $" + str(self.cash) + "\n")
             buy_prompt = input("Would you like to buy " + prop_name + " for $" + str(player_position[1]) + "? Type Y or N.")
@@ -623,9 +623,12 @@ class Player:
                     print("Your position:", self.board_index)
                 else:
                     pass
-                s2_prompt = input("Enter cash you want to receive: ")
-                self.cash += int(s2_prompt)
-                print("Your cash:", self.cash)
+                s2_prompt = input("Enter cash you want to receive (press Enter to skip): ")
+                if s_prompt != "":
+                    self.cash += int(s2_prompt)
+                    print("Your cash:", self.cash)
+                else:
+                    pass
                 print("Available properties: ")
                 for index, item in enumerate(property_list):
                     print(index, item, sep='  ')
@@ -701,10 +704,12 @@ class Player:
                                 if item.color == build_prop.color:
                                     house_check_list.append(item.houses)
                             print("\nhouse check list", house_check_list)
-                            if abs(build_prop.houses - max(house_check_list)) > 1:
+                            print("check 1: ", build_prop.houses)
+                            if abs(build_prop.houses - min(house_check_list)) > 1:
                                 print("\nFor each monopoly, the number of houses on each property cannot differ by more than one. You must build equally.\n")
                                 build_prop.houses -= 1
                                 assert build_prop.houses >= 0
+                                print("check 2: ", build_prop.houses)
                                 continue
                             if max(house_check_list) != 0 and max(house_check_list) == min(house_check_list):
                                 print("\nEach " + build_prop.color + " property now contains " + str(build_prop.houses) + " houses.\n")
