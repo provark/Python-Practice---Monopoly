@@ -1,4 +1,46 @@
 #!/usr/bin/env python3
+# FORMATTING FUNCTIONS: wrapping text
+def wrap_star(word):
+    print("\n--" + ('-' * len(word)) + '----')
+    print('*  ' + (' ' * len(word)) + '  *')
+    print('*  ' + word + '  *')    
+    print('*  ' + (' ' * len(word)) + '  *')
+    print("--" + ('-' * len(word)) + '----\n')
+
+def wrap_line(word):
+    print("\n--" + ('-' * len(word)) + '----')
+    print('|  ' + (' ' * len(word)) + '  |')
+    print('|  ' + word + '  |')    
+    print('|  ' + (' ' * len(word)) + '  |')
+    print("--" + ('-' * len(word)) + '----\n')
+    
+def wrap_cash(word):
+    print("\n--" + ('-' * len(word)) + '----')
+    print('$  ' + (' ' * len(word)) + '  $')
+    print('$  ' + word + '  $')    
+    print('$  ' + (' ' * len(word)) + '  $')
+    print("--" + ('-' * len(word)) + '----\n')
+    
+# COLORS
+cpurple = '\033[35m'
+cblue = '\033[34m'
+cpink = '\33[35m'
+corange = '\033[93m'
+cred = '\33[31m'
+cyellow = '\033[33m'
+cgreen='\033[32m'
+cindigo = '\33[94m'
+cend = '\33[0m'
+
+
+purple = (cviolet2 + "purple" + cend)
+blue = (cblue + "blue" + cend)
+pink = (cviolet + "pink" + cend)
+orange = (corange + "orange" + cend)
+red = (cred2 + "red" + cend)
+yellow = (cyellow + "yellow" + cend)
+green = (cgreen + "green" + cend)
+indigo = (cblue2 + "indigo" + cend)  
 
 #********************************#
 ### CHAPTER 1: Property class ###
@@ -20,56 +62,56 @@ class Property:
         self.mortgage = mortgage
         self.mort_status = mort_status
         
-Med_Ave = Property("purple: Mediterranean Avenue", "purple",
+Med_Ave = Property(purple + ": Mediterranean Avenue", "purple",
                    60, 2, 10, 30, 90, 160, 250, 50, 30) 
-Bal_Ave = Property("purple: Baltic Avenue", "purple",
+Bal_Ave = Property(purple + ": Baltic Avenue", "purple",
                    60, 4, 20, 60, 180, 320, 450, 50, 30)
 
-Ori_Ave = Property("blue:   Oriental Avenue", "blue",
+Ori_Ave = Property(blue + ":   Oriental Avenue", "blue",
                    100, 6, 30, 90, 270, 400, 550, 50, 50)
-Ver_Ave = Property("blue:   Vermont Avenue", "blue",
+Ver_Ave = Property(blue + ":   Vermont Avenue", "blue",
                    100, 6, 30, 90, 270, 400, 550, 50, 50)
-Con_Ave = Property("blue:   Connecticut Avenue", "blue",
+Con_Ave = Property(blue + ":   Connecticut Avenue", "blue",
                    100, 8, 40, 100, 300, 450, 600, 50, 60)
 
-Cha_Pla = Property("pink:   St. Charles Place", "pink",
+Cha_Pla = Property(pink + ":   St. Charles Place", "pink",
                    140, 10, 50, 150, 450, 625, 750, 100, 70)
-Sta_Ave = Property("pink:   States Avenue", "pink",
+Sta_Ave = Property(pink + ":   States Avenue", "pink",
                    140, 10, 50, 150, 450, 625, 750, 100, 70)
-Vir_Ave = Property("pink:   Virginia Avenue", "pink",
+Vir_Ave = Property(pink + ":   Virginia Avenue", "pink",
                    160, 12, 60, 180, 500, 700, 900, 100, 80)
 
-Jam_Pla = Property("orange: St. James Place", "orange",
+Jam_Pla = Property(orange + ": St. James Place", "orange",
                    180, 14, 70, 200, 550, 750, 950, 100, 90)
-Ten_Ave = Property("orange: Tennesee Avenue", "orange",
+Ten_Ave = Property(orange + ": Tennesee Avenue", "orange",
                    180, 14, 70, 200, 550, 750, 950, 100, 90)
-New_Ave = Property("orange: New York Avenue", "orange",
+New_Ave = Property(orange + ": New York Avenue", "orange",
                    200, 16, 80, 220, 600, 800, 1000, 100, 100)
 
-Ken_Ave = Property("red:    Kentucky Avenue", "red",
+Ken_Ave = Property(red + ":    Kentucky Avenue", "red",
                    220, 18, 90, 250, 700, 875, 1050, 150, 110)
-Ind_Ave = Property("red:    Indiana Avenue", "red",
+Ind_Ave = Property(red + ":    Indiana Avenue", "red",
                    220, 18, 90, 250, 700, 875, 1050, 150, 110)
-Ill_Ave = Property("red:    Illinois Avenue", "red",
+Ill_Ave = Property(red + ":    Illinois Avenue", "red",
                    240, 20, 100, 300, 750, 925, 1100, 150, 120) 
 
-Atl_Ave = Property("yellow: Atlantic Avenue", "yellow",
+Atl_Ave = Property(yellow + ": Atlantic Avenue", "yellow",
                    260, 22, 110, 330, 800, 975, 1150, 150, 130)
-Ven_Ave = Property("yellow: Ventnor Avenue", "yellow",
+Ven_Ave = Property(yellow + ": Ventnor Avenue", "yellow",
                    260, 22, 110, 330, 800, 975, 1150, 150, 130)
-Mar_Gar = Property("yellow: Marvin Gardens", "yellow",
+Mar_Gar = Property(yellow + ": Marvin Gardens", "yellow",
                    280, 24, 120, 360, 850, 1025, 1200, 150, 140)
 
-Pac_Ave = Property("green:  Pacific Avenue", "green",
+Pac_Ave = Property(green + ":  Pacific Avenue", "green",
                    300, 26, 130, 390, 900, 1100, 1275, 200, 150)
-Nor_Ave = Property("green:  North Carolina Avenue", "green",
+Nor_Ave = Property(green + ":  North Carolina Avenue", "green",
                    300, 26, 130, 390, 900, 1100, 1275, 200, 150)
-Pen_Ave = Property("green:  Pennsylvania Avenue", "green",
+Pen_Ave = Property(green + ":  Pennsylvania Avenue", "green",
                    320, 28, 150, 450, 1000, 1200, 1400, 200, 160)
 
-Par_Pla = Property("indigo: Park Place", "indigo",
+Par_Pla = Property(indigo + ": Park Place", "indigo",
                    350, 35, 175, 500, 1100, 1300, 1500, 200, 175)
-Boardw  = Property("indigo: Boardwalk", "indigo",
+Boardw  = Property(indigo + ": Boardwalk", "indigo",
                    400, 50, 200, 600, 1400, 1700, 2000, 200, 200)
 
 Uti_Ele = Property("Utility Electric Company", "utility",
